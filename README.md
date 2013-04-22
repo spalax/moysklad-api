@@ -1,4 +1,4 @@
-zf1-module-moysklad
+MoySklad API
 ===================
 
 Implementation of api for http://www.moysklad.ru/
