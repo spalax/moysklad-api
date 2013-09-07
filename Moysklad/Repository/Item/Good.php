@@ -45,6 +45,11 @@ class Moysklad_Repository_Item_Good implements Moysklad_Repository_Item_Interfac
     protected $_id = 0;
 
     /**
+     * @var string
+     */
+    protected $_uuid = '';
+
+    /**
      * @var number
      */
     protected $_price = 0;
@@ -81,6 +86,7 @@ class Moysklad_Repository_Item_Good implements Moysklad_Repository_Item_Interfac
                 throw new InvalidArgumentException('Could not found id in element');
             }
             $this->_id = (string)$element->id;
+            $this->_uuid = (string)$element->uuid;
 
             if (!$element->salePrices->price->attributes()->value) {
                 throw new InvalidArgumentException('Could not found price in element');
@@ -103,6 +109,14 @@ class Moysklad_Repository_Item_Good implements Moysklad_Repository_Item_Interfac
     public function getId()
     {
         return $this->_id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUuid()
+    {
+        return $this->_uuid;
     }
 
     /**
